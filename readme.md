@@ -2,8 +2,6 @@
 
 > Write a functional switch statement.
 
-Because normal switch statements are annoying.
-
 ## Install
 
 ```
