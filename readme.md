@@ -22,7 +22,22 @@ var fn = Switch({
 fn('a') // => calls actionA with 'a'
 ```
 
-You can get real fancy if you want...
+## API
+
+#### `Switch(cases)` -> `function`
+
+##### cases
+
+*Required*
+Type: `object`
+
+An object, with keys being the 'cases' to match against and values being the function to call in each case.
+
+If no matching is found, and a 'default' case is given, it will be used.
+
+## More Examples
+
+Getting crazy with value-pipe:
 
 ```js
 var pipe = require('value-pipe')
@@ -40,19 +55,6 @@ function getStatus (user) {
   return user.status
 }
 ```
-
-## API
-
-#### `Switch(cases)` -> `function`
-
-##### cases
-
-*Required*
-Type: `object`
-
-An object, with keys being the 'cases' to match against and values being the function to call in each case.
-
-If no matching is found, and a 'default' case is given, it will be used.
 
 ## License
 
