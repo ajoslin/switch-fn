@@ -1,0 +1,29 @@
+{
+  "name": "switch-fn",
+  "main": "index.js",
+  "version": "0.0.0",
+  "description": "Write a functional switch statement.",
+  "license": "MIT",
+  "repository": "ajoslin/switch-fn",
+  "author": {
+    "name": "Andrew Joslin",
+    "email": "andrewtjoslin@gmail.com",
+    "url": "ajoslin.com"
+  },
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "keywords": [
+    "switch case functional"
+  ],
+  "devDependencies": {
+    "tape": "^4.0.0",
+    "standard": "^5.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "sinon": "^1.17.3"
+  }
+}
