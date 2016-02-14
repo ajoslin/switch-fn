@@ -56,7 +56,7 @@ function getStatus (user) {
 }
 ```
 
-Pass in an array if you're only expecting numbers:
+You can pass in an array if you're only expecting numbers:
 
 ```js
 var Switch = require('switch-fn')
