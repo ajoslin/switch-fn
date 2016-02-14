@@ -41,7 +41,7 @@ Getting crazy with value-pipe:
 
 ```js
 var pipe = require('value-pipe')
-var Switch = require('switch')
+var Switch = require('switch-fn')
 
 var onStatus = pipe(getStatus, Switch({
   active: actOnActive,
@@ -54,6 +54,16 @@ onStatus(user)
 function getStatus (user) {
   return user.status
 }
+```
+
+Pass in an array if you're only expecting numbers:
+
+```js
+var Switch = require('switch-fn')
+
+var fn = Switch([onZero, onOne])
+
+fn(0)
 ```
 
 ## License
