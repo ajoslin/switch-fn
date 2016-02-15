@@ -1,7 +1,7 @@
 {
   "name": "switch-fn",
   "main": "index.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Write a functional switch statement.",
   "license": "MIT",
   "repository": "ajoslin/switch-fn",
