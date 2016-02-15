@@ -22,8 +22,5 @@
   },
   "files": [
     "index.js"
-  ],
-  "dependencies": {
-    "sinon": "^1.17.3"
-  }
+  ]
 }
