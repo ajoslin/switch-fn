@@ -37,7 +37,7 @@ If no matching is found, and a 'default' case is given, it will be used.
 
 ## More Examples
 
-Getting crazy with value-pipe:
+### As part of a data pipeline
 
 ```js
 var pipe = require('value-pipe')
@@ -56,7 +56,7 @@ function getStatus (user) {
 }
 ```
 
-You can pass in an array if you're only expecting numbers:
+### Pass in an array for numbers only
 
 ```js
 var Switch = require('switch-fn')
@@ -64,6 +64,26 @@ var Switch = require('switch-fn')
 var fn = Switch([onZero, onOne])
 
 fn(0)
+```
+
+### ES2015 modules have a default property
+
+This is very indirect and not recommended in most cases, but it's kind of cool.
+
+`actions.js`
+```es6
+export function a() {}
+export function b() {}
+export default function defaultAction() {}
+```
+
+```es6
+import * as Switch from 'switch-fn';
+import * as actions from './actions';
+
+var act = Switch(actions)
+
+var result = act('a')
 ```
 
 ## License
