@@ -68,7 +68,7 @@ fn(0)
 
 ### Fibonacci
 
-```
+```es6
 var fib = Switch({
   0: (n) => n,
   1: (n) => n,
