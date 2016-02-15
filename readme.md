@@ -19,7 +19,7 @@ var fn = Switch({
   default: defaultAction
 })
 
-fn('a') // => calls actionA with 'a'
+var result = fn('a') // => calls actionA with 'a' and gives back actionA's return value
 ```
 
 ## API
@@ -49,7 +49,7 @@ var onStatus = pipe(getStatus, Switch({
   pending: actOnPending
 }))
 
-onStatus(user)
+var result = onStatus(user)
 
 function getStatus (user) {
   return user.status
