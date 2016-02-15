@@ -35,9 +35,9 @@ An object, with keys being the 'cases' to match against and values being the fun
 
 If no case matching the input is found and a 'default' case is given, it will be used.
 
-## More Examples
+# More Examples
 
-### As part of a data pipeline
+#### As part of a data pipeline
 
 ```js
 var pipe = require('value-pipe')
@@ -56,7 +56,7 @@ function getStatus (user) {
 }
 ```
 
-### Pass in an array for numbers only
+#### Pass in an array for numbers only
 
 ```js
 var Switch = require('switch-fn')
@@ -66,7 +66,7 @@ var fn = Switch([onZero, onOne])
 fn(0)
 ```
 
-### Fibonacci
+#### Fibonacci
 
 ```es6
 var fib = Switch({
@@ -76,26 +76,6 @@ var fib = Switch({
 });
 
 fib(10) // => 55
-```
-
-### ES2015 modules have a default property
-
-This is very indirect and not recommended in most cases, but it's kind of cool.
-
-`actions.js`
-```es6
-export function a() {}
-export function b() {}
-export default function defaultAction() {}
-```
-
-```es6
-import * as Switch from 'switch-fn';
-import * as actions from './actions';
-
-var act = Switch(actions)
-
-var result = act('a')
 ```
 
 ## License
