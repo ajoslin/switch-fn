@@ -33,7 +33,7 @@ Type: `object`
 
 An object, with keys being the 'cases' to match against and values being the function to call in each case.
 
-If no matching is found, and a 'default' case is given, it will be used.
+If no case matching the input is found and a 'default' case is given, it will be used.
 
 ## More Examples
 
