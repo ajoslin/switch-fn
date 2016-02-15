@@ -1,23 +1,19 @@
 'use strict'
 
 var test = require('tape')
-var sinon = require('sinon')
 var Switch = require('./')
 
 test(function (t) {
   var cases = {
-    a: sinon.spy(),
-    default: sinon.spy()
+    a: function () { return 'result a' },
+    default: function () { return 'result default' }
   }
+
   var fn = Switch(cases)
 
-  fn('a')
-  t.ok(cases.a.calledOnce)
-  t.notOk(cases.default.called)
+  t.equal(fn('a'), 'result a')
+  t.equal(fn('b'), 'result default')
 
-  fn('b')
-  t.ok(cases.a.calledOnce)
-  t.ok(cases.default.calledOnce)
   t.end()
 })
 
