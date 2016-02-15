@@ -66,6 +66,18 @@ var fn = Switch([onZero, onOne])
 fn(0)
 ```
 
+### Fibonacci
+
+```
+var fib = Switch({
+  0: (n) => n,
+  1: (n) => n,
+  default: (n) => fib(n - 1) + fib(n - 2)
+});
+
+fib(10) // => 55
+```
+
 ### ES2015 modules have a default property
 
 This is very indirect and not recommended in most cases, but it's kind of cool.
