@@ -56,6 +56,22 @@ function getStatus (user) {
 }
 ```
 
+You can also take advantage of ES2015 modules which provide a default prop
+`actions.js`
+```es6
+export function a() {}
+export function b() {}
+export default function defaultAction() {}
+```
+```es6
+import * as switch from 'switch-fn';
+import * as actions from './actions';
+
+var fn = switch(actions)
+
+var result = fn('a') // => calls a with 'a' and gives back a's return value
+```
+
 You can pass in an array if you're only expecting numbers:
 
 ```js
