@@ -37,23 +37,21 @@ If no case matching the input is found and a 'default' case is given, it will be
 
 # More Examples
 
-#### As part of a data pipeline
+#### With a "property getter" for more complicated objects
 
 ```js
-var pipe = require('value-pipe')
-var Switch = require('switch-fn')
+const Switch = require('switch-fn')
+const pipe = require('value-pipe')
 
-var onStatus = pipe(getStatus, Switch({
-  active: actOnActive,
-  inactive: actOnInactive,
-  pending: actOnPending
-}))
+const mySwitch = pipe(
+  value => value.username.toLowerCase(),
+  Switch({
+    alice: () => 'hello, alice',
+    john: () => 'hello, john'
+  })
+)
 
-var result = onStatus(user)
-
-function getStatus (user) {
-  return user.status
-}
+mySwitch({ username: 'Alice' }) // => 'hello, alice'
 ```
 
 #### Pass in an array for numbers only
