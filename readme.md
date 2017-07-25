@@ -22,9 +22,22 @@ var fn = Switch({
 var result = fn('a') // => calls actionA with 'a' and gives back actionA's return value
 ```
 
+```js
+var Switch = require('switch-fn')
+
+var fn = Switch({
+  a: actionA,
+  b: actionB,
+  default: defaultAction
+}, function (value) { return value.caseChoice })
+
+var obj = {caseChoice: b}
+var result = fn(obj) // => calls actionB with obj and gives back actionB's return value
+```
+
 ## API
 
-#### `Switch(cases)` -> `function`
+#### `Switch(cases, customizer = identity)` -> `function`
 
 ##### cases
 
@@ -34,6 +47,13 @@ Type: `object`
 An object, with keys being the 'cases' to match against and values being the function to call in each case.
 
 If no case matching the input is found and a 'default' case is given, it will be used.
+
+##### customizer
+
+*Optional*
+Type: `function`
+
+A customizer function to specify how to match the case. Default to an identity function
 
 # More Examples
 

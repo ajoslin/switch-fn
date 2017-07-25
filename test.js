@@ -22,3 +22,17 @@ test('doesnt error if no default found', function (t) {
   fn(1)
   t.end()
 })
+
+test('custom "pattern" matcher', function (t) {
+  var cases = {
+    foo: function () { return 'bar' },
+    baz: function (val) { return val.buz }
+  }
+  var fn = Switch(cases, function (value) { return value.caseChoice })
+  var obj = {
+    caseChoice: 'baz',
+    buz: 'my val'
+  }
+  t.equal(fn(obj), 'my val')
+  t.end()
+})

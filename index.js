@@ -2,9 +2,13 @@
 
 function noop () {}
 
-module.exports = function Switch (cases) {
+function identity (value) { return value }
+
+module.exports = function Switch (cases, customizer) {
+  customizer = customizer || identity
   cases = cases || {}
   return function switchFn (value) {
-    return (cases[value] || cases.default || noop)(value)
+    var index = customizer(value)
+    return (cases[index] || cases.default || noop)(value)
   }
 }
